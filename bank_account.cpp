@@ -29,12 +29,19 @@ public:
     void display() {
         cout << "Owner: " << owner << ", Balance: " << balance << endl;
     }
+
+    void addInterest(double rate) {
+        balance += (balance * rate / 100);
+        cout << "Interest added. New Balance: " << balance << endl;
+    }
+
 };
 
 int main() {
     BankAccount account1("Alice", 500);
     account1.deposit(200);
     account1.withdraw(100);
+    account1.addInterest(39);
     account1.display();
 
     return 0;
